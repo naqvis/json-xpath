@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="master">
+<meta name="crystal_docs.project_name" content="json-xpath">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="json-xpath">
+  <title>JSONXPath::Node - json-xpath master</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          json-xpath
+        </a>
+      </h1>
+
+      <span class="project-version">
+        master
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="json-xpath/JSONXPath" data-name="jsonxpath">
+      <a href="../JSONXPath.html">JSONXPath</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="json-xpath/JSONXPath/Node" data-name="jsonxpath::node">
+      <a href="../JSONXPath/Node.html">Node</a>
+      
+    </li>
+  
+  <li class=" " data-id="json-xpath/JSONXPath/NodeType" data-name="jsonxpath::nodetype">
+      <a href="../JSONXPath/NodeType.html">NodeType</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> JSONXPath::Node
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../JSONXPath/Node.html">JSONXPath::Node</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>A Node consists of a <code><a href="../JSONXPath/NodeType.html">NodeType</a></code> and some data (tag name for element nodes, content for text)
+and are part of a tree of Nodes</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L13" target="_blank">
+        node.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/xpath.cr#L5" target="_blank">
+        xpath.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#parse(input:String%7CIO)-class-method" class="signature"><strong>.parse</strong>(input : String | IO)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#children-instance-method" class="signature"><strong>#children</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#content-instance-method" class="signature"><strong>#content</strong></a>
+        
+          <div class="summary"><p>returns the value of the node and all of its child nodes.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#data:String-instance-method" class="signature"><strong>#data</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#first_child:Node?-instance-method" class="signature"><strong>#first_child</strong> : Node?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#first_child=(first_child:Node?)-instance-method" class="signature"><strong>#first_child=</strong>(first_child : Node?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last_child:Node?-instance-method" class="signature"><strong>#last_child</strong> : Node?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last_child=(last_child:Node?)-instance-method" class="signature"><strong>#last_child=</strong>(last_child : Node?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#level:Int32-instance-method" class="signature"><strong>#level</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#next_sibling:Node?-instance-method" class="signature"><strong>#next_sibling</strong> : Node?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#next_sibling=(next_sibling:Node?)-instance-method" class="signature"><strong>#next_sibling=</strong>(next_sibling : Node?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parent:Node?-instance-method" class="signature"><strong>#parent</strong> : Node?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parent=(parent:Node?)-instance-method" class="signature"><strong>#parent=</strong>(parent : Node?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#prev_sibling:Node?-instance-method" class="signature"><strong>#prev_sibling</strong> : Node?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#prev_sibling=(prev_sibling:Node?)-instance-method" class="signature"><strong>#prev_sibling=</strong>(prev_sibling : Node?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#raw:JSON::Any-instance-method" class="signature"><strong>#raw</strong> : JSON::Any</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select(name:String)-instance-method" class="signature"><strong>#select</strong>(name : String)</a>
+        
+          <div class="summary"><p>select finds the first of child elements with the specified name</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#type:NodeType-instance-method" class="signature"><strong>#type</strong> : NodeType</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#xpath(path:String):Node?-instance-method" class="signature"><strong>#xpath</strong>(path : String) : Node?</a>
+        
+          <div class="summary"><p>Searches this node for XPath <em>path</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#xpath_bool(path:String)-instance-method" class="signature"><strong>#xpath_bool</strong>(path : String)</a>
+        
+          <div class="summary"><p>Searches this node for XPath <em>path</em> and restricts the return type to <code>String</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#xpath_evaluate(path)-instance-method" class="signature"><strong>#xpath_evaluate</strong>(path)</a>
+        
+          <div class="summary"><p>Searches this node for XPath <em>path</em> and return result with appropriate type <code>(Bool | Float64 | String | NodeIterator | Nil)</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#xpath_float(path:String)-instance-method" class="signature"><strong>#xpath_float</strong>(path : String)</a>
+        
+          <div class="summary"><p>Searches this node for XPath <em>path</em> and restricts the return type to <code>Float64</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#xpath_nodes(path:String):Array(Node)-instance-method" class="signature"><strong>#xpath_nodes</strong>(path : String) : Array(Node)</a>
+        
+          <div class="summary"><p>Searches this node for XPath <em>path</em>.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="parse(input:String|IO)-class-method">
+      <div class="signature">
+        
+        def self.<strong>parse</strong>(input : String | IO)
+
+        <a class="method-permalink" href="#parse(input:String%7CIO)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L28" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="children-instance-method">
+      <div class="signature">
+        
+        def <strong>children</strong>
+
+        <a class="method-permalink" href="#children-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L86" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="content-instance-method">
+      <div class="signature">
+        
+        def <strong>content</strong>
+
+        <a class="method-permalink" href="#content-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>returns the value of the node and all of its child nodes.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L97" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="data:String-instance-method">
+      <div class="signature">
+        
+        def <strong>data</strong> : String
+
+        <a class="method-permalink" href="#data:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="first_child:Node?-instance-method">
+      <div class="signature">
+        
+        def <strong>first_child</strong> : <a href="../JSONXPath/Node.html">Node</a>?
+
+        <a class="method-permalink" href="#first_child:Node?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="first_child=(first_child:Node?)-instance-method">
+      <div class="signature">
+        
+        def <strong>first_child=</strong>(first_child : <a href="../JSONXPath/Node.html">Node</a>?)
+
+        <a class="method-permalink" href="#first_child=(first_child:Node?)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last_child:Node?-instance-method">
+      <div class="signature">
+        
+        def <strong>last_child</strong> : <a href="../JSONXPath/Node.html">Node</a>?
+
+        <a class="method-permalink" href="#last_child:Node?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last_child=(last_child:Node?)-instance-method">
+      <div class="signature">
+        
+        def <strong>last_child=</strong>(last_child : <a href="../JSONXPath/Node.html">Node</a>?)
+
+        <a class="method-permalink" href="#last_child=(last_child:Node?)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="level:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>level</strong> : Int32
+
+        <a class="method-permalink" href="#level:Int32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L23" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="next_sibling:Node?-instance-method">
+      <div class="signature">
+        
+        def <strong>next_sibling</strong> : <a href="../JSONXPath/Node.html">Node</a>?
+
+        <a class="method-permalink" href="#next_sibling:Node?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="next_sibling=(next_sibling:Node?)-instance-method">
+      <div class="signature">
+        
+        def <strong>next_sibling=</strong>(next_sibling : <a href="../JSONXPath/Node.html">Node</a>?)
+
+        <a class="method-permalink" href="#next_sibling=(next_sibling:Node?)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parent:Node?-instance-method">
+      <div class="signature">
+        
+        def <strong>parent</strong> : <a href="../JSONXPath/Node.html">Node</a>?
+
+        <a class="method-permalink" href="#parent:Node?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parent=(parent:Node?)-instance-method">
+      <div class="signature">
+        
+        def <strong>parent=</strong>(parent : <a href="../JSONXPath/Node.html">Node</a>?)
+
+        <a class="method-permalink" href="#parent=(parent:Node?)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="prev_sibling:Node?-instance-method">
+      <div class="signature">
+        
+        def <strong>prev_sibling</strong> : <a href="../JSONXPath/Node.html">Node</a>?
+
+        <a class="method-permalink" href="#prev_sibling:Node?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="prev_sibling=(prev_sibling:Node?)-instance-method">
+      <div class="signature">
+        
+        def <strong>prev_sibling=</strong>(prev_sibling : <a href="../JSONXPath/Node.html">Node</a>?)
+
+        <a class="method-permalink" href="#prev_sibling=(prev_sibling:Node?)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="raw:JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>raw</strong> : JSON::Any
+
+        <a class="method-permalink" href="#raw:JSON::Any-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select(name:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(name : String)
+
+        <a class="method-permalink" href="#select(name:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>select finds the first of child elements with the specified name</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L104" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="type:NodeType-instance-method">
+      <div class="signature">
+        
+        def <strong>type</strong> : <a href="../JSONXPath/NodeType.html">NodeType</a>
+
+        <a class="method-permalink" href="#type:NodeType-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/node.cr#L20" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="xpath(path:String):Node?-instance-method">
+      <div class="signature">
+        
+        def <strong>xpath</strong>(path : String) : <a href="../JSONXPath/Node.html">Node</a>?
+
+        <a class="method-permalink" href="#xpath(path:String):Node?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Searches this node for XPath <em>path</em>. Returns first matched <code>HTML::Node</code> or <code>nil</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/xpath.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="xpath_bool(path:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>xpath_bool</strong>(path : String)
+
+        <a class="method-permalink" href="#xpath_bool(path:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Searches this node for XPath <em>path</em> and restricts the return type to <code>String</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/xpath.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="xpath_evaluate(path)-instance-method">
+      <div class="signature">
+        
+        def <strong>xpath_evaluate</strong>(path)
+
+        <a class="method-permalink" href="#xpath_evaluate(path)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Searches this node for XPath <em>path</em> and return result with appropriate type
+<code>(Bool | Float64 | String | NodeIterator | Nil)</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/xpath.cr#L43" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="xpath_float(path:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>xpath_float</strong>(path : String)
+
+        <a class="method-permalink" href="#xpath_float(path:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Searches this node for XPath <em>path</em> and restricts the return type to <code>Float64</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/xpath.cr#L32" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="xpath_nodes(path:String):Array(Node)-instance-method">
+      <div class="signature">
+        
+        def <strong>xpath_nodes</strong>(path : String) : Array(<a href="../JSONXPath/Node.html">Node</a>)
+
+        <a class="method-permalink" href="#xpath_nodes(path:String):Array(Node)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Searches this node for XPath <em>path</em>. Returns all of the matched <code>HTML::Node</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/json-xpath/blob/b1cd09a718c44384e206b9fd541580a1ba359109/src/xpath.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
