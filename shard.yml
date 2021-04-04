@@ -1,10 +1,12 @@
 name: json-xpath
-version: 0.1.2
+version: 0.1.3
 
 authors:
   - Ali Naqvi <syed.alinaqvi@gmail.com>
+description: |
+ Provide XPath support on JSON document
 
-crystal: 0.36.0
+crystal: ">= 0.36.0, < 2.0.0"
 
 dependencies:
   xpath2:
